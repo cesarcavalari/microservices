@@ -1,4 +1,4 @@
-package com.voffice.properties.controller;
+package com.cavalari.lab02.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.voffice.properties.email.Email;
+import com.cavalari.lab02.model.Email;
 
 @RestController
 @RequestMapping("/email")

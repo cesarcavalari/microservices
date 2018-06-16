@@ -1,13 +1,13 @@
-package com.voffice.restfulapp;
+package com.cavalari.lab02;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class RestfulappApplication {
+public class Lab02Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(RestfulappApplication.class, args);
+		SpringApplication.run(Lab02Application.class, args);
 	}
 
 }

@@ -1,4 +1,4 @@
-package com.voffice.properties.email;
+package com.cavalari.lab02.model;
 
 import javax.annotation.PostConstruct;
 
