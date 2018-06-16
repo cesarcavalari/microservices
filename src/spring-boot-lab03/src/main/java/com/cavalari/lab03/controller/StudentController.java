@@ -20,6 +20,8 @@ import com.cavalari.lab03.resource.StudentResource;
 import com.cavalari.lab03.resource.StudentResourceAssembler;
 import com.cavalari.lab03.services.StudentService;
 
+import io.swagger.annotations.ApiOperation;
+
 @RestController
 @RequestMapping("/students")
 public class StudentController {
@@ -30,26 +32,31 @@ public class StudentController {
 	@Autowired
 	private StudentResourceAssembler assembler;
 	
+	@ApiOperation("Returns a student")
 	@GetMapping("/{id}")
 	public ResponseEntity<StudentResource> getStudent(@PathVariable Long id) {
 		return new ResponseEntity<>(assembler.toResource(service.getStudent(id)), HttpStatus.OK);
 	}
 	
+	@ApiOperation("Returns a list of student")
 	@GetMapping(produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
 	public ResponseEntity<Collection<StudentResource>> getStudents() {
 		return new ResponseEntity<>(assembler.toResources(service.getStudents()), HttpStatus.OK);
 	}
 	
+	@ApiOperation("Creates a student")
 	@PostMapping
 	public ResponseEntity<StudentResource> addStudent(@RequestBody Student student) {
 		return new ResponseEntity<>(assembler.toResource(service.addStudent(student)), HttpStatus.OK);
 	}
 	
+	@ApiOperation("Update a student")
 	@PutMapping
 	public ResponseEntity<StudentResource> updateStudent(@RequestBody Student student) {
 		return new ResponseEntity<>(assembler.toResource(service.updateStudent(student)), HttpStatus.OK);
 	}
 	
+	@ApiOperation("Delete a student")
 	@DeleteMapping("{id}")
 	public void deleteStudent(@PathVariable Long id) {
 		service.deleteStudent(id);
