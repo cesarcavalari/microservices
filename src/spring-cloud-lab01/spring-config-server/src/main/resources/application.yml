@@ -1,0 +1,10 @@
+management:
+  security:
+    enabled: false
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: file://local/git/workshop-microservices/src/spring-cloud-lab01/config-repo
