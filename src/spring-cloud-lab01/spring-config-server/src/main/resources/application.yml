@@ -1,3 +1,6 @@
+server:
+  port: 8888
+  
 management:
   security:
     enabled: false
@@ -7,4 +10,4 @@ spring:
     config:
       server:
         git:
-          uri: file://local/git/workshop-microservices/src/spring-cloud-lab01/config-repo
+          uri: file://${user.home}/dev/gitprojects/config-repo

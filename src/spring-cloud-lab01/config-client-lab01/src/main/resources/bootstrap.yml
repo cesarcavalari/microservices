@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: config-client-lab01
+  cloud:
+    config:
+      uri: http://localhost:8888
