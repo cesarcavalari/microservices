@@ -3,6 +3,3 @@ server:
 
 info:
   id: ${spring.application.name}
-
-logging:
-  level: debug

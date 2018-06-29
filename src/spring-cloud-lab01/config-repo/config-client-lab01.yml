@@ -1,0 +1,30 @@
+server:
+  port: ${PORT:8085}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
+    health:
+      show-details: always
+
+app:
+  config:
+    property:
+      service-name: microservice-atualizado
+      service-ip: 172.21.221.29
+
+---
+spring:
+  profiles: prod
+
+server:
+  port: ${PORT:8087}
+
+---
+spring:
+  profiles: dev
+
+server:
+  port: ${PORT:8086}
