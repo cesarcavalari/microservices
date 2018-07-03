@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: student-services-ribbon
+  cloud:
+    config:
+      uri: http://localhost:8888
