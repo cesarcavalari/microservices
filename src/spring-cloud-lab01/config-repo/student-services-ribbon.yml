@@ -1,0 +1,57 @@
+server:
+  port: ${PORT:8087}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
+    health:
+      show-details: always
+
+spring:
+  application:
+    name: student-services-ribbon
+  h2:
+    console:
+      enabled: true
+  jpa:
+    show-sql: true
+  datasource:
+    url: jdbc:h2:mem:alunodb
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    preferIpAddress: true
+    
+service:
+  disciplines:
+    serviceId: discipline-services
+
+logging:
+  level:
+    com.cavalari.studentservices.DisciplineAPI: DEBUG
+
+feign:
+  compression:
+    request:
+      enabled: true
+    response:
+      enabled: true 
+
+---
+spring:
+  profiles: ribbon-only
+
+server:
+  port: ${PORT:8090}
+
+discipline-services:
+  ribbon:
+    eureka:
+      enabled: false
+    listOfServers: localhost:8088,localhost:18088
+    ServerListRefreshInterval: 15000
